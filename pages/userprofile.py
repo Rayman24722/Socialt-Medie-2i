@@ -32,7 +32,7 @@ def edit_profile(user):
     
     with doc:
         menu_items = [
-            ('Forside', '/'),
+            ('Posts', '/'),
             ('Log ud', '/logout'),
             ('Ny post', '/write'),
             ('Nyt billede', '/upload'),

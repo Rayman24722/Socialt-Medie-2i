@@ -182,7 +182,7 @@ async def login(request):
         return redirect("/")
 
     tok = new_token(username)
-    resp = redirect("/")
+    resp = redirect("/profile")
     resp.cookies['auth'] = username + ':' + tok
     resp.cookies['auth']['expires'] = datetime.datetime.utcnow() +\
                                       datetime.timedelta(days=1)
@@ -198,7 +198,7 @@ async def register(request):
             request.form['pword']    and
             request.form['rpword']):
         app.ctx.msg = "Udfyld alle felter."
-        return redirect("/")
+        return redirect("/profile")
     
     username = request.form['uname'][0]
     password1 = request.form['pword'][0]
